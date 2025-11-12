@@ -6,9 +6,9 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import { CartProvider } from "./context/CartContext";
-import { OrderProvider } from "./context/OrderContext";
+import { AuthProvider } from "./Context/AuthContext.jsx";
+import { CartProvider } from "./Context/CartContext.jsx";
+import { OrderProvider } from "./Context/OrderContext.jsx";
 import React from "react";
 // Components
 import Header from "./components/Header.jsx";
