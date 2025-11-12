@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useOrders } from "../../context/OrderContext";
+import { useOrders } from "../../Context/OrderContext";
 
 const DeliveryDashboard = () => {
   const { deliveryOrders, updateDeliveryOrder } = useOrders();
@@ -112,9 +112,13 @@ const DeliveryDashboard = () => {
         <div className="flex gap-4">
           <div className="bg-blue-500 text-white rounded-lg p-4 shadow-md">
             <div className="text-center">
-              <div className="text-2xl font-bold">{deliveryOrders?.filter(order => 
-                ["ASSIGNED", "ACCEPTED", "OUT_FOR_DELIVERY"].includes(order?.status?.toUpperCase())
-              )?.length || 0}</div>
+              <div className="text-2xl font-bold">
+                {deliveryOrders?.filter((order) =>
+                  ["ASSIGNED", "ACCEPTED", "OUT_FOR_DELIVERY"].includes(
+                    order?.status?.toUpperCase()
+                  )
+                )?.length || 0}
+              </div>
               <div className="text-sm font-medium">Active Orders</div>
             </div>
           </div>
@@ -122,7 +126,9 @@ const DeliveryDashboard = () => {
           <div className="bg-green-500 text-white rounded-lg p-4 shadow-md">
             <div className="text-center">
               <div className="text-2xl font-bold">
-                {deliveryOrders?.filter(order => order?.status?.toUpperCase() === "DELIVERED")?.length || 0}
+                {deliveryOrders?.filter(
+                  (order) => order?.status?.toUpperCase() === "DELIVERED"
+                )?.length || 0}
               </div>
               <div className="text-sm font-medium">Completed Today</div>
             </div>
@@ -176,17 +182,19 @@ const DeliveryDashboard = () => {
               {/* Action Button */}
               <div className="mt-6">
                 <div className="flex justify-between items-center">
-                  <div className="flex-1">
-                    {getActionButton(order)}
-                  </div>
+                  <div className="flex-1">{getActionButton(order)}</div>
                 </div>
               </div>
 
               {/* Delivery Information */}
               {order?.deliveryAddress && (
                 <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                  <h4 className="text-sm font-medium text-gray-900 mb-2">Delivery Information</h4>
-                  <p className="text-sm text-gray-600">{order.deliveryAddress}</p>
+                  <h4 className="text-sm font-medium text-gray-900 mb-2">
+                    Delivery Information
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    {order.deliveryAddress}
+                  </p>
                 </div>
               )}
             </div>
