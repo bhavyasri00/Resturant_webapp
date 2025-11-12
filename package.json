@@ -1,0 +1,18 @@
+{
+  "name": "restaurant-webapp",
+  "version": "1.0.0",
+  "description": "Restaurant Web Application with Frontend and Backend",
+  "private": true,
+  "scripts": {
+    "build": "cd Frontend && npm run build",
+    "dev": "cd Frontend && npm run dev",
+    "preview": "cd Frontend && npm run preview"
+  },
+  "workspaces": [
+    "Frontend",
+    "Backend"
+  ],
+  "engines": {
+    "node": "18.x || 20.x"
+  }
+}
